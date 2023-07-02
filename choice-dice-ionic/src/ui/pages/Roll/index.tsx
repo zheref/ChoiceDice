@@ -1,24 +1,15 @@
 import { IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../../components/ExploreContainer';
 import './styles.css';
+import { useSelector } from 'react-redux';
 
-interface Dice {
-  id: number;
-  name: string;
-  options: string[];
-}
-
-// Dices Hardcoded Data Source
-// TODO: Migrate to Services
-const dices: Dice[] = [
-  { id: 1, name: 'Cardio Today', options: ['Elliptical', 'Bike', 'Swimming Pool', 'Park Walk'] },
-  { id: 2, name: 'Dinner', options: ['Tuna Avocado', 'Alejandria Salad', 'Tortilla Pizza', 'Benedict Eggs'] },
-  { id: 3, name: 'Movie', options: ['The Godfather', 'The Matrix', 'The Lord of the Rings', 'The Shawshank Redemption'] },
-  { id: 4, name: 'Game', options: ['Chess', 'Monopoly', 'Poker', 'Dungeons & Dragons'] },
-  { id: 5, name: 'Workout', options: ['Push Ups', 'Pull Ups', 'Squats', 'Lunges'] }
-]
+// Store
+import { RollState } from '../../../core/rollStore';
+import { RootState } from '../../../core/appStore';
 
 const Roll: React.FC = () => {
+  const dices = useSelector((state: RootState) => state.roll.dices);
+
   return (
     <IonPage>
       <IonHeader>
