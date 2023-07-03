@@ -1,3 +1,4 @@
+import ComposableArchitecture
 import SwiftUI
 import CoreData
 
@@ -5,7 +6,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            Text("Hola")
+            RollView(store: Store(
+                initialState: Roll.State(),
+                reducer: Roll()
+            ))
         }
     }
     
