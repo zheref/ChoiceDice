@@ -4,12 +4,25 @@ import SwiftUI
 struct RollView: View {
     let store: StoreOf<Roll>
     
+    struct DicesViewState: Equatable {
+        @BindingViewState var dices: [Dice]
+        
+        init(store: BindingViewStore<Roll.State>) {
+            self._dices = store.$dices
+        }
+    }
+    
     var body: some View {
         WithViewStore(store, observe: \.dices) { viewStore in
-            Text("Hay \(viewStore.state.count) dados")
+            List {
+                ForEach(viewStore.state, id: \.name) { dice in
+                    Text(dice.name)
+                }
+            }
         }
+        .navigationTitle("Roll a dice")
         .task {
-//            store.send(.started)
+            store.send(.started)
         }
         
     }
@@ -17,9 +30,11 @@ struct RollView: View {
 
 struct RollView_Previews: PreviewProvider {
     static var previews: some View {
-        RollView(store: Store(
-            initialState: Roll.State(),
-            reducer: Roll()
-        ))
+        NavigationView {
+            RollView(store: Store(
+                initialState: Roll.State(),
+                reducer: Roll()
+            ))
+        }
     }
 }

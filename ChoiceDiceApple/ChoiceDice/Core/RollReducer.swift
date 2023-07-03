@@ -4,7 +4,11 @@ import Foundation
 struct Roll: ReducerProtocol {
     
     struct State: Equatable {
-        @BindingState var dices = [Dice]()
+        @BindingState var dices: [Dice] = [
+            .init(name: "Sede Bodytech", options: ["Rio Sur", "Viscaya", "Las Americas"]),
+            .init(name: "Color de Ropa", options: ["Negro", "Amarillo", "Rojo", "Azul", "Blanco", "Verde"]),
+            .init(name: "Coworking Café", options: ["Pergamino", "Urbania", "Café Dragon", "Al Alma", "Juan Valdez", "Semilla"])
+        ]
     }
     
     enum Action: BindableAction {
@@ -17,9 +21,6 @@ struct Roll: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .started:
-                state.dices = [
-                    .init(name: "Sede Bodytech", options: ["Rio Sur", "Viscaya", "Las Americas"])
-                ]
                 return .none
             case .binding:
                 return .none
