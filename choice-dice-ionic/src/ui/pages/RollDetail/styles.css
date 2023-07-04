@@ -1,0 +1,11 @@
+ion-grid.take-all-height {
+    height: 100%;
+}
+
+ion-row.take-all-height {
+    height: 100%;
+}
+
+ion-text {
+    text-align: center;
+}

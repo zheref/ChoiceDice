@@ -22,7 +22,7 @@ const Roll: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
+            <IonTitle size="large">Roll a dice</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonList>

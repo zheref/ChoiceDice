@@ -20,7 +20,9 @@ const exampleDices: Dice[] = [
     { id: 3, name: 'Movie', options: ['The Godfather', 'The Matrix', 'The Lord of the Rings', 'The Shawshank Redemption'] },
     { id: 4, name: 'Game', options: ['Chess', 'Monopoly', 'Poker', 'Dungeons & Dragons'] },
     { id: 5, name: 'Workout', options: ['Push Ups', 'Pull Ups', 'Squats', 'Lunges'] },
-    { id: 6, name: 'Dessert', options: ['Ice Cream', 'Chocolate Cake', 'Brownie', 'Cheesecake'] }
+    { id: 6, name: 'Dessert', options: ['Ice Cream', 'Chocolate Cake', 'Brownie', 'Cheesecake'] },
+    { id: 7, name: 'Restaurant', options: ["Red's", "Domino's", 'Firehouse', 'W'] },
+    { id: 8, name: 'Delivery Dinner', options: ["Alitas", "Hamburguesa", 'Pizza', 'Sushi', 'Hotdog', 'Bowls', 'Pasta', 'Picada', 'Empanadas', 'Salchipapa', 'Asian', 'Sanduches', 'Pollo', 'Mexican', 'Arepas', 'Arabe', 'Seafood', 'India'] },
   ]
 
 export const rollSlice = createSlice({

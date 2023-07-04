@@ -58,7 +58,7 @@ const App: React.FC = () => (
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/roll">
+          <IonTabButton tab="roll" href="/roll">
             <IonIcon aria-hidden="true" icon={diceOutline} />
             <IonLabel>Roll</IonLabel>
           </IonTabButton>
