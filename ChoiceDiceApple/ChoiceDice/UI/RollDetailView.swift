@@ -9,7 +9,15 @@ struct RollDetailView: View {
             VStack {
                 WithViewStore(store, observe: \.randomPick) { viewStore in
                     Text(viewStore.state ?? "Nothing Picked")
+                        .bold()
+                        .font(.title2)
                 }
+                Button {
+                    viewStore.send(.userTappedRegenerate)
+                } label: {
+                    Text("Regenerate")
+                }
+                .buttonStyle(BorderedProminentButtonStyle())
             }
             .navigationTitle(viewStore.state.name)
         }

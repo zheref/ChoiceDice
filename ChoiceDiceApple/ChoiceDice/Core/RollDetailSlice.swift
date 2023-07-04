@@ -20,6 +20,7 @@ struct RollDetailSlice: ReducerProtocol {
 
     enum Action: BindableAction {
         case started
+        case userTappedRegenerate
         case binding(BindingAction<State>)
     }
 
@@ -27,6 +28,9 @@ struct RollDetailSlice: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .started:
+                state.randomPick = getRandomOption(from: state.dice.options)
+                return.none
+            case .userTappedRegenerate:
                 state.randomPick = getRandomOption(from: state.dice.options)
                 return.none
             case .binding:
