@@ -20,6 +20,8 @@
 		2B309E412A535A8B00220D1F /* RollReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E402A535A8B00220D1F /* RollReducer.swift */; };
 		2B309E442A535B2900220D1F /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E432A535B2800220D1F /* Dice.swift */; };
 		2B309E462A535D5A00220D1F /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E452A535D5A00220D1F /* RollView.swift */; };
+		2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */; };
+		2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DCC2A54766100729137 /* RollDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		2B309E402A535A8B00220D1F /* RollReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollReducer.swift; sourceTree = "<group>"; };
 		2B309E432A535B2800220D1F /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		2B309E452A535D5A00220D1F /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
+		2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailSlice.swift; sourceTree = "<group>"; };
+		2B8A0DCC2A54766100729137 /* RollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			children = (
 				2B309E0C2A53580700220D1F /* ContentView.swift */,
 				2B309E452A535D5A00220D1F /* RollView.swift */,
+				2B8A0DCC2A54766100729137 /* RollDetailView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				2B309E422A535B2000220D1F /* Model */,
 				2B309E402A535A8B00220D1F /* RollReducer.swift */,
+				2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -316,7 +322,9 @@
 				2B309E462A535D5A00220D1F /* RollView.swift in Sources */,
 				2B309E0D2A53580700220D1F /* ContentView.swift in Sources */,
 				2B309E0B2A53580700220D1F /* ChoiceDiceApp.swift in Sources */,
+				2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */,
 				2B309E412A535A8B00220D1F /* RollReducer.swift in Sources */,
+				2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */,
 				2B309E442A535B2900220D1F /* Dice.swift in Sources */,
 				2B309E172A53580900220D1F /* ChoiceDice.xcdatamodeld in Sources */,
 			);

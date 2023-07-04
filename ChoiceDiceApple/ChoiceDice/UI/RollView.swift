@@ -16,9 +16,30 @@ struct RollView: View {
         WithViewStore(store, observe: \.dices) { viewStore in
             List {
                 ForEach(viewStore.state, id: \.name) { dice in
-                    Text(dice.name)
+                    Button {
+                        viewStore.send(.navigateToDice(dice: dice))
+                    } label: {
+                        HStack {
+                            Text(dice.name)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Color.gray)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .background(Color.white)
+                    }
+                    .buttonStyle(.plain)
+                    .frame(maxWidth: .infinity)
                 }
+                .listStyle(DefaultListStyle())
             }
+        }
+        .navigationDestination(
+            store: store.scope(state: \.$destination, action: { .destination($0) }),
+            state: /Roll.Destination.State.rollDetail,
+            action: Roll.Destination.Action.rollDetail
+        ) { store in
+            RollDetailView(store: store)
         }
         .navigationTitle("Roll a dice")
         .task {
@@ -30,7 +51,7 @@ struct RollView: View {
 
 struct RollView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             RollView(store: Store(
                 initialState: Roll.State(),
                 reducer: Roll()
