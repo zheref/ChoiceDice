@@ -33,6 +33,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './ui/theme/variables.css';
+import RollDetail from './ui/pages/RollDetail';
 
 setupIonicReact();
 
@@ -41,9 +42,10 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
+          <Route exact path="/roll">
             <Roll />
           </Route>
+          <Route path="/roll/:id" component={RollDetail} />
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
@@ -51,11 +53,12 @@ const App: React.FC = () => (
             <Tab3 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/roll" />
           </Route>
         </IonRouterOutlet>
+
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/roll">
             <IonIcon aria-hidden="true" icon={diceOutline} />
             <IonLabel>Roll</IonLabel>
           </IonTabButton>

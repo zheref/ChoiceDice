@@ -28,7 +28,7 @@ const Roll: React.FC = () => {
         <IonList>
           {dices.map(dice => (
             <IonItemSliding key={dice.id}>
-              <IonItem key={dice.id}>
+              <IonItem key={dice.id} routerLink={`/roll/${dice.id}`}>
                 <IonLabel>{dice.name}</IonLabel>
               </IonItem>
               <IonItemOptions side="end">

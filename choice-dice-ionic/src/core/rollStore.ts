@@ -1,12 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface Dice {
+export interface Dice {
     id: number;
     name: string;
     options: string[];
 }
-export interface RollState {
+
+export class RollState {
     dices: Dice[];
+
+    constructor(dices: Dice[]) {
+        this.dices = dices;
+    }
 }
 
 const exampleDices: Dice[] = [
