@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import Foundation
 
-struct Roll: ReducerProtocol {
+struct RollSlice: ReducerProtocol {
     
     struct State: Equatable {
         @BindingState var dices: [Dice] = [

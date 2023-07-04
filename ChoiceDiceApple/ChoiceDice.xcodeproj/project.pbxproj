@@ -17,11 +17,15 @@
 		2B309E2B2A53580900220D1F /* ChoiceDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E2A2A53580900220D1F /* ChoiceDiceUITests.swift */; };
 		2B309E2D2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E2C2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift */; };
 		2B309E3F2A5359B800220D1F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2B309E3E2A5359B800220D1F /* ComposableArchitecture */; };
-		2B309E412A535A8B00220D1F /* RollReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E402A535A8B00220D1F /* RollReducer.swift */; };
+		2B309E412A535A8B00220D1F /* RollSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E402A535A8B00220D1F /* RollSlice.swift */; };
 		2B309E442A535B2900220D1F /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E432A535B2800220D1F /* Dice.swift */; };
 		2B309E462A535D5A00220D1F /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E452A535D5A00220D1F /* RollView.swift */; };
 		2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */; };
 		2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DCC2A54766100729137 /* RollDetailView.swift */; };
+		2BF2D1B82A54A6070082293A /* RollSliceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1B72A54A6070082293A /* RollSliceTests.swift */; };
+		2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1B92A54A9E80082293A /* getRandomOption.swift */; };
+		2BF2D1C42A54B7B30082293A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF2D1C32A54B7B30082293A /* ComposableArchitecture */; };
+		2BF2D1C62A54B7C50082293A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF2D1C52A54B7C50082293A /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +58,13 @@
 		2B309E262A53580900220D1F /* ChoiceDiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoiceDiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B309E2A2A53580900220D1F /* ChoiceDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDiceUITests.swift; sourceTree = "<group>"; };
 		2B309E2C2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2B309E402A535A8B00220D1F /* RollReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollReducer.swift; sourceTree = "<group>"; };
+		2B309E402A535A8B00220D1F /* RollSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSlice.swift; sourceTree = "<group>"; };
 		2B309E432A535B2800220D1F /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		2B309E452A535D5A00220D1F /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailSlice.swift; sourceTree = "<group>"; };
 		2B8A0DCC2A54766100729137 /* RollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailView.swift; sourceTree = "<group>"; };
+		2BF2D1B72A54A6070082293A /* RollSliceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSliceTests.swift; sourceTree = "<group>"; };
+		2BF2D1B92A54A9E80082293A /* getRandomOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = getRandomOption.swift; path = ChoiceDiceTests/getRandomOption.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF2D1C42A54B7B30082293A /* ComposableArchitecture in Frameworks */,
+				2BF2D1C62A54B7C50082293A /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,7 @@
 				2B309E1F2A53580900220D1F /* ChoiceDiceTests */,
 				2B309E292A53580900220D1F /* ChoiceDiceUITests */,
 				2B309E082A53580700220D1F /* Products */,
+				2BF2D1C22A54B7B30082293A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				2B309E202A53580900220D1F /* ChoiceDiceTests.swift */,
+				2BF2D1B72A54A6070082293A /* RollSliceTests.swift */,
 			);
 			path = ChoiceDiceTests;
 			sourceTree = "<group>";
@@ -161,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2B309E422A535B2000220D1F /* Model */,
-				2B309E402A535A8B00220D1F /* RollReducer.swift */,
+				2B309E402A535A8B00220D1F /* RollSlice.swift */,
 				2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */,
 			);
 			path = Core;
@@ -170,6 +180,7 @@
 		2B309E3C2A53592700220D1F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				2BF2D1B92A54A9E80082293A /* getRandomOption.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -180,6 +191,13 @@
 				2B309E432A535B2800220D1F /* Dice.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2BF2D1C22A54B7B30082293A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +237,10 @@
 				2B309E1E2A53580900220D1F /* PBXTargetDependency */,
 			);
 			name = ChoiceDiceTests;
+			packageProductDependencies = (
+				2BF2D1C32A54B7B30082293A /* ComposableArchitecture */,
+				2BF2D1C52A54B7C50082293A /* SnapshotTesting */,
+			);
 			productName = ChoiceDiceTests;
 			productReference = 2B309E1C2A53580900220D1F /* ChoiceDiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -275,6 +297,7 @@
 			mainGroup = 2B309DFE2A53580700220D1F;
 			packageReferences = (
 				2B309E3D2A5359B800220D1F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				2BF2D1BB2A54B5AE0082293A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 2B309E082A53580700220D1F /* Products */;
 			projectDirPath = "";
@@ -322,8 +345,9 @@
 				2B309E462A535D5A00220D1F /* RollView.swift in Sources */,
 				2B309E0D2A53580700220D1F /* ContentView.swift in Sources */,
 				2B309E0B2A53580700220D1F /* ChoiceDiceApp.swift in Sources */,
+				2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */,
 				2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */,
-				2B309E412A535A8B00220D1F /* RollReducer.swift in Sources */,
+				2B309E412A535A8B00220D1F /* RollSlice.swift in Sources */,
 				2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */,
 				2B309E442A535B2900220D1F /* Dice.swift in Sources */,
 				2B309E172A53580900220D1F /* ChoiceDice.xcdatamodeld in Sources */,
@@ -335,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B309E212A53580900220D1F /* ChoiceDiceTests.swift in Sources */,
+				2BF2D1B82A54A6070082293A /* RollSliceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +686,14 @@
 				minimumVersion = 0.55.0;
 			};
 		};
+		2BF2D1BB2A54B5AE0082293A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -668,6 +701,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B309E3D2A5359B800220D1F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		2BF2D1C32A54B7B30082293A /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B309E3D2A5359B800220D1F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		2BF2D1C52A54B7C50082293A /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BF2D1BB2A54B5AE0082293A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 
