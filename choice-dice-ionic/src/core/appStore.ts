@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { rollReducer } from "./rollStore";
+import { rollReducer } from "./rollSlice";
+import { rollDetailReducer } from "./rollDetailStore";
 
 export const appStore = configureStore({
     reducer: {
-        roll: rollReducer
+        roll: rollReducer,
+        rollDetail: rollDetailReducer
     }
 })
 

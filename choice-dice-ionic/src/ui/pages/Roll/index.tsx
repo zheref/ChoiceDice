@@ -4,7 +4,7 @@ import './styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Store
-import { RollState, deleteDice } from '../../../core/rollStore';
+import { RollState, deleteDice } from '../../../core/rollSlice';
 import { RootState } from '../../../core/appStore';
 import { trash } from 'ionicons/icons';
 

@@ -1,22 +1,29 @@
 import { IonBackButton, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonList, IonPage, IonRippleEffect, IonRow, IonText, IonTitle, IonToolbar } from "@ionic/react";
 import { RouteComponentProps } from "react-router";
 import { RootState } from "../../../core/appStore";
-import { useSelector } from "react-redux";
-import { Dice } from "../../../core/rollStore";
+import { useDispatch, useSelector } from "react-redux";
+import { Dice } from "../../../core/rollSlice";
 import takeRandomOptionFrom from "../../../domain/takeRandomOptionFrom";
 
 import './styles.css';
+import { setDice } from "../../../core/rollDetailStore";
 
 interface RollDetailProps extends RouteComponentProps<{ id: string; }> {}
 type Optional<T> = T | undefined;
 // type OptionalDice = Dice | undefined
 
 const RollDetail: React.FC<RollDetailProps> = (props) => {
-    const dice: Optional<Dice> = useSelector( (state: RootState) => {
+    const dispatch = useDispatch();
+
+    const potentialDice: Optional<Dice> = useSelector( (state: RootState) => {
         return state.roll.dices.find( dice =>
             `${dice.id}` === props.match.params.id
         )
     })
+
+    if (potentialDice) dispatch(setDice(potentialDice));
+
+    const dice = useSelector( (state: RootState) => state.rollDetail.dice);
 
     return (
         <IonPage>
