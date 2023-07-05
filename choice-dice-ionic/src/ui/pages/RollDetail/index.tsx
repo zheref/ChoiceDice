@@ -6,7 +6,8 @@ import { Dice } from "../../../core/rollSlice";
 import takeRandomOptionFrom from "../../../domain/takeRandomOptionFrom";
 
 import './styles.css';
-import { setDice } from "../../../core/rollDetailStore";
+import { setDice, started, userTappedRegenerate } from "../../../core/rollDetailStore";
+import { useEffect } from "react";
 
 interface RollDetailProps extends RouteComponentProps<{ id: string; }> {}
 type Optional<T> = T | undefined;
@@ -24,6 +25,11 @@ const RollDetail: React.FC<RollDetailProps> = (props) => {
     if (potentialDice) dispatch(setDice(potentialDice));
 
     const dice = useSelector( (state: RootState) => state.rollDetail.dice);
+    const randomPick = useSelector( (state: RootState) => state.rollDetail.randomPick);
+
+    useEffect(() => {
+        dispatch(started());
+    });
 
     return (
         <IonPage>
@@ -49,9 +55,9 @@ const RollDetail: React.FC<RollDetailProps> = (props) => {
                     <IonRow className="ion-justify-content-center ion-align-items-center take-all-height">
                         <IonCol size="auto" class="ion-align-items-center">
                             <IonText>
-                                <h2>{ takeRandomOptionFrom(dice?.options || []) }</h2>
+                                <h2>{ randomPick }</h2>
                             </IonText>
-                            <IonButton expand="block">
+                            <IonButton expand="block" onClick={() => dispatch(userTappedRegenerate())}>
                                 Regenerate
                             </IonButton>
                         </IonCol>
