@@ -12,12 +12,18 @@ struct AddRoll: ReducerProtocol {
         @BindingState var name: String = ""
         @BindingState var newOption: String = ""
         var options: [RollOption] = []
-    }
+    }    
 
     enum Action: BindableAction {
+        // Automatic action
         case binding(BindingAction<State>)
-        case userWantsToAddRoll
+
+        // User actions
+        case userWantsToAddOption
         case userFinishedAddRoll
+
+        // Parent action
+        case rollAction(Roll.DelegateAction)
     }
 
     var body: some ReducerProtocol<State, Action> {
@@ -25,9 +31,19 @@ struct AddRoll: ReducerProtocol {
 
         Reduce { state, action in
             switch action {
-            case .userWantsToAddRoll:
+            case .userWantsToAddOption:
+                state.options.append(RollOption(name: state.newOption))
                 return .none
             case .userFinishedAddRoll:
+                let dice = Dice(
+                    name: state.name,
+                    options: state.options.map({ $0.name })
+                )
+                return .send(
+                    .rollAction(.addNewDice(dice: dice))
+                )
+            case .rollAction:
+                // Ignore parent actions
                 return .none
             case .binding:
                 return .none

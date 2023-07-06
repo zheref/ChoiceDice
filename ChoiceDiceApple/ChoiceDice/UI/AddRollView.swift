@@ -40,11 +40,20 @@ struct AddRollView: View {
                             TextField("Add option...", text: viewStore.$newOption)
                             Spacer()
                             Button {
-
+                                store.send(.userWantsToAddOption)
                             } label: {
                                 Image(systemName: "plus.circle")
                             }
                         }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        store.send(.userFinishedAddRoll)
+                    } label: {
+                        Image(systemName: "checkmark")
                     }
                 }
             }

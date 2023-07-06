@@ -45,6 +45,10 @@ struct Roll: ReducerProtocol {
         case destination(PresentationAction<Destination.Action>)
         case binding(BindingAction<State>)
     }
+
+    enum DelegateAction {
+        case addNewDice(dice: Dice)
+    }
     
     var body: some ReducerProtocolOf<Self> {
         Reduce { state, action in
@@ -58,6 +62,10 @@ struct Roll: ReducerProtocol {
                 return .none
             case .navigateToDice(let dice):
                 state.destination = .rollDetail(.init(dice: dice))
+                return .none
+            case .destination(.presented(.addRoll(.rollAction(.addNewDice(dice: let dice))))):
+                state.dices.append(dice)
+                state.destination = nil
                 return .none
             case .destination:
                 return .none

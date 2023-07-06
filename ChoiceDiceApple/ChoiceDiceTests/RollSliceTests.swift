@@ -9,7 +9,7 @@ final class RollSliceTests: XCTestCase {
 
     func testNavigateToDice() async {
         // Action -> State Chances!
-        // Effect -> Action
+        // Action -> Effect -> Action
 
         // 1. Set up environment
         // 1.1. Start store with initial state
@@ -82,6 +82,16 @@ final class RollSliceTests: XCTestCase {
                 reducer: Roll()
             ))
         }, record: true)
+    }
+
+    func testUserFinishedAddingRoll() async {
+        let store = TestStore(
+            initialState: AddRoll.State(),
+            reducer: AddRoll()
+        )
+
+        await store.send(.userFinishedAddRoll)
+        await store.receive(/.rollAction(.addNewDice(dice: Dice(name: "", options: []))))
     }
 
 }
