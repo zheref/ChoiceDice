@@ -20,6 +20,8 @@ struct RollView: View {
                         viewStore.send(.navigateToDice(dice: dice))
                     } label: {
                         HStack {
+                            Image(systemName: "dice.fill")
+                                .foregroundColor(Color.red)
                             Text(dice.name)
                             Spacer()
                             Image(systemName: "chevron.right")
