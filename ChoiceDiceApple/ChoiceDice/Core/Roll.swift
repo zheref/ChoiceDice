@@ -16,15 +16,20 @@ struct Roll: ReducerProtocol {
     struct Destination: ReducerProtocol {
         enum State: Equatable {
             case rollDetail(RollDetail.State)
+            case addRoll(AddRoll.State)
         }
 
         enum Action {
             case rollDetail(RollDetail.Action)
+            case addRoll(AddRoll.Action)
         }
 
         var body: some ReducerProtocolOf<Self> {
             Scope(state: /State.rollDetail, action: /Action.rollDetail) {
                 RollDetail()
+            }
+            Scope(state: /State.addRoll, action: /Action.addRoll) {
+                AddRoll()
             }
         }
     }
@@ -32,15 +37,21 @@ struct Roll: ReducerProtocol {
     enum Action: BindableAction {
         case started
 
-        case destination(PresentationAction<Destination.Action>)
+        // User actions
         case navigateToDice(dice: Dice)
-        
+        case addNewRoll
+
+        // Automatic actions
+        case destination(PresentationAction<Destination.Action>)
         case binding(BindingAction<State>)
     }
     
     var body: some ReducerProtocolOf<Self> {
         Reduce { state, action in
             switch action {
+            case .addNewRoll:
+                state.destination = .addRoll(.init())
+                return .none
             case .started:
                 return .none
             case .binding:

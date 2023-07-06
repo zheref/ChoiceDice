@@ -42,6 +42,22 @@ struct RollView: View {
         ) { store in
             RollDetailView(store: store)
         }
+        .sheet(
+            store: store.scope(state: \.$destination, action: { .destination($0) }),
+            state: /Roll.Destination.State.addRoll,
+            action: Roll.Destination.Action.addRoll
+        ) { store in
+            AddRollView(store: store)
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    store.send(.addNewRoll)
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
         .navigationTitle("Roll a dice")
         .task {
             store.send(.started)

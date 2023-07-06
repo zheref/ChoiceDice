@@ -26,6 +26,8 @@
 		2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1B92A54A9E80082293A /* getRandomOption.swift */; };
 		2BF2D1C42A54B7B30082293A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF2D1C32A54B7B30082293A /* ComposableArchitecture */; };
 		2BF2D1C62A54B7C50082293A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF2D1C52A54B7C50082293A /* SnapshotTesting */; };
+		2BF2D1C82A571D7B0082293A /* AddRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1C72A571D7B0082293A /* AddRoll.swift */; };
+		2BF2D1CA2A5723F30082293A /* AddRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1C92A5723F30082293A /* AddRollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		2B8A0DCC2A54766100729137 /* RollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailView.swift; sourceTree = "<group>"; };
 		2BF2D1B72A54A6070082293A /* RollSliceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSliceTests.swift; sourceTree = "<group>"; };
 		2BF2D1B92A54A9E80082293A /* getRandomOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = getRandomOption.swift; path = ChoiceDiceTests/getRandomOption.swift; sourceTree = SOURCE_ROOT; };
+		2BF2D1C72A571D7B0082293A /* AddRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoll.swift; sourceTree = "<group>"; };
+		2BF2D1C92A5723F30082293A /* AddRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				2B309E0C2A53580700220D1F /* ContentView.swift */,
 				2B309E452A535D5A00220D1F /* RollView.swift */,
 				2B8A0DCC2A54766100729137 /* RollDetailView.swift */,
+				2BF2D1C92A5723F30082293A /* AddRollView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				2B309E422A535B2000220D1F /* Model */,
 				2B309E402A535A8B00220D1F /* Roll.swift */,
 				2B8A0DC82A54728D00729137 /* RollDetail.swift */,
+				2BF2D1C72A571D7B0082293A /* AddRoll.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -342,10 +348,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B309E142A53580900220D1F /* Persistence.swift in Sources */,
+				2BF2D1CA2A5723F30082293A /* AddRollView.swift in Sources */,
 				2B309E462A535D5A00220D1F /* RollView.swift in Sources */,
 				2B309E0D2A53580700220D1F /* ContentView.swift in Sources */,
 				2B309E0B2A53580700220D1F /* ChoiceDiceApp.swift in Sources */,
 				2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */,
+				2BF2D1C82A571D7B0082293A /* AddRoll.swift in Sources */,
 				2B8A0DC92A54728D00729137 /* RollDetail.swift in Sources */,
 				2B309E412A535A8B00220D1F /* Roll.swift in Sources */,
 				2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */,
