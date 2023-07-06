@@ -3,9 +3,15 @@ import Foundation
 
 struct AddRoll: ReducerProtocol {
 
+    struct RollOption: Equatable, Identifiable {
+        let id = UUID()
+        let name: String
+    }
+
     struct State: Equatable {
-        var name: String = ""
-        var options: [String] = []
+        @BindingState var name: String = ""
+        @BindingState var newOption: String = ""
+        var options: [RollOption] = []
     }
 
     enum Action: BindableAction {
@@ -15,6 +21,8 @@ struct AddRoll: ReducerProtocol {
     }
 
     var body: some ReducerProtocol<State, Action> {
+        BindingReducer()
+
         Reduce { state, action in
             switch action {
             case .userWantsToAddRoll:
