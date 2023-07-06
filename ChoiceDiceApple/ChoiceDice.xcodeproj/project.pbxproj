@@ -66,7 +66,7 @@
 		2B8A0DC82A54728D00729137 /* RollDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetail.swift; sourceTree = "<group>"; };
 		2B8A0DCC2A54766100729137 /* RollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailView.swift; sourceTree = "<group>"; };
 		2BF2D1B72A54A6070082293A /* RollSliceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSliceTests.swift; sourceTree = "<group>"; };
-		2BF2D1B92A54A9E80082293A /* getRandomOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = getRandomOption.swift; path = ChoiceDiceTests/getRandomOption.swift; sourceTree = SOURCE_ROOT; };
+		2BF2D1B92A54A9E80082293A /* getRandomOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = getRandomOption.swift; path = ChoiceDice/Domain/getRandomOption.swift; sourceTree = SOURCE_ROOT; };
 		2BF2D1C72A571D7B0082293A /* AddRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoll.swift; sourceTree = "<group>"; };
 		2BF2D1C92A5723F30082293A /* AddRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
