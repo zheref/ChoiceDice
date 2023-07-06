@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import Foundation
 
-struct RollDetailSlice: ReducerProtocol {
+struct RollDetail: ReducerProtocol {
 
     struct State: Equatable {
         var dice: Dice

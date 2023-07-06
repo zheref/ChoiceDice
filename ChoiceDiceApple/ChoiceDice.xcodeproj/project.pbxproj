@@ -17,10 +17,10 @@
 		2B309E2B2A53580900220D1F /* ChoiceDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E2A2A53580900220D1F /* ChoiceDiceUITests.swift */; };
 		2B309E2D2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E2C2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift */; };
 		2B309E3F2A5359B800220D1F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2B309E3E2A5359B800220D1F /* ComposableArchitecture */; };
-		2B309E412A535A8B00220D1F /* RollSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E402A535A8B00220D1F /* RollSlice.swift */; };
+		2B309E412A535A8B00220D1F /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E402A535A8B00220D1F /* Roll.swift */; };
 		2B309E442A535B2900220D1F /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E432A535B2800220D1F /* Dice.swift */; };
 		2B309E462A535D5A00220D1F /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B309E452A535D5A00220D1F /* RollView.swift */; };
-		2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */; };
+		2B8A0DC92A54728D00729137 /* RollDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DC82A54728D00729137 /* RollDetail.swift */; };
 		2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A0DCC2A54766100729137 /* RollDetailView.swift */; };
 		2BF2D1B82A54A6070082293A /* RollSliceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1B72A54A6070082293A /* RollSliceTests.swift */; };
 		2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D1B92A54A9E80082293A /* getRandomOption.swift */; };
@@ -58,10 +58,10 @@
 		2B309E262A53580900220D1F /* ChoiceDiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoiceDiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B309E2A2A53580900220D1F /* ChoiceDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDiceUITests.swift; sourceTree = "<group>"; };
 		2B309E2C2A53580900220D1F /* ChoiceDiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2B309E402A535A8B00220D1F /* RollSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSlice.swift; sourceTree = "<group>"; };
+		2B309E402A535A8B00220D1F /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
 		2B309E432A535B2800220D1F /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		2B309E452A535D5A00220D1F /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
-		2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailSlice.swift; sourceTree = "<group>"; };
+		2B8A0DC82A54728D00729137 /* RollDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetail.swift; sourceTree = "<group>"; };
 		2B8A0DCC2A54766100729137 /* RollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDetailView.swift; sourceTree = "<group>"; };
 		2BF2D1B72A54A6070082293A /* RollSliceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollSliceTests.swift; sourceTree = "<group>"; };
 		2BF2D1B92A54A9E80082293A /* getRandomOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = getRandomOption.swift; path = ChoiceDiceTests/getRandomOption.swift; sourceTree = SOURCE_ROOT; };
@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				2B309E422A535B2000220D1F /* Model */,
-				2B309E402A535A8B00220D1F /* RollSlice.swift */,
-				2B8A0DC82A54728D00729137 /* RollDetailSlice.swift */,
+				2B309E402A535A8B00220D1F /* Roll.swift */,
+				2B8A0DC82A54728D00729137 /* RollDetail.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -346,8 +346,8 @@
 				2B309E0D2A53580700220D1F /* ContentView.swift in Sources */,
 				2B309E0B2A53580700220D1F /* ChoiceDiceApp.swift in Sources */,
 				2BF2D1BA2A54A9E80082293A /* getRandomOption.swift in Sources */,
-				2B8A0DC92A54728D00729137 /* RollDetailSlice.swift in Sources */,
-				2B309E412A535A8B00220D1F /* RollSlice.swift in Sources */,
+				2B8A0DC92A54728D00729137 /* RollDetail.swift in Sources */,
+				2B309E412A535A8B00220D1F /* Roll.swift in Sources */,
 				2B8A0DCD2A54766100729137 /* RollDetailView.swift in Sources */,
 				2B309E442A535B2900220D1F /* Dice.swift in Sources */,
 				2B309E172A53580900220D1F /* ChoiceDice.xcdatamodeld in Sources */,

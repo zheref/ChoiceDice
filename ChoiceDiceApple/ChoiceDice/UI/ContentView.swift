@@ -7,8 +7,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             RollView(store: Store(
-                initialState: RollSlice.State(),
-                reducer: RollSlice()
+                initialState: Roll.State(),
+                reducer: Roll()
             ))
         }
     }

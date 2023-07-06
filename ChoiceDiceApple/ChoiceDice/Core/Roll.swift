@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import Foundation
 
-struct RollSlice: ReducerProtocol {
+struct Roll: ReducerProtocol {
     
     struct State: Equatable {
         @BindingState var dices: [Dice] = [
@@ -15,16 +15,16 @@ struct RollSlice: ReducerProtocol {
 
     struct Destination: ReducerProtocol {
         enum State: Equatable {
-            case rollDetail(RollDetailSlice.State)
+            case rollDetail(RollDetail.State)
         }
 
         enum Action {
-            case rollDetail(RollDetailSlice.Action)
+            case rollDetail(RollDetail.Action)
         }
 
         var body: some ReducerProtocolOf<Self> {
             Scope(state: /State.rollDetail, action: /Action.rollDetail) {
-                RollDetailSlice()
+                RollDetail()
             }
         }
     }

@@ -15,8 +15,8 @@ final class RollSliceTests: XCTestCase {
         // 1.1. Start store with initial state
 
         let store = TestStore(
-            initialState: RollSlice.State(),
-            reducer: RollSlice()
+            initialState: Roll.State(),
+            reducer: Roll()
         )
 
         // 1.2. Mock dependencies
@@ -39,8 +39,8 @@ final class RollSliceTests: XCTestCase {
         let dice = Dice(name: "Prueba", options: ["1", "2", "3"])
 
         let store = TestStore(
-            initialState: RollDetailSlice.State(dice: dice),
-            reducer: RollDetailSlice()
+            initialState: RollDetail.State(dice: dice),
+            reducer: RollDetail()
         )
 
         // 1.2. Mock dependencies
@@ -60,8 +60,8 @@ final class RollSliceTests: XCTestCase {
         let starterValue = "SNK"
 
         let store = TestStore(
-            initialState: RollDetailSlice.State(dice: dice),
-            reducer: RollDetailSlice()
+            initialState: RollDetail.State(dice: dice),
+            reducer: RollDetail()
         )
 
         //Mock Dependencies
@@ -78,8 +78,8 @@ final class RollSliceTests: XCTestCase {
     func testRollView() {
         assert(view: NavigationStack {
             RollView(store: Store(
-                initialState: RollSlice.State(),
-                reducer: RollSlice()
+                initialState: Roll.State(),
+                reducer: Roll()
             ))
         }, record: true)
     }

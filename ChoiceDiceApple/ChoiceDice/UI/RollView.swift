@@ -2,12 +2,12 @@ import ComposableArchitecture
 import SwiftUI
 
 struct RollView: View {
-    let store: StoreOf<RollSlice>
+    let store: StoreOf<Roll>
     
     struct DicesViewState: Equatable {
         @BindingViewState var dices: [Dice]
         
-        init(store: BindingViewStore<RollSlice.State>) {
+        init(store: BindingViewStore<Roll.State>) {
             self._dices = store.$dices
         }
     }
@@ -35,8 +35,8 @@ struct RollView: View {
         }
         .navigationDestination(
             store: store.scope(state: \.$destination, action: { .destination($0) }),
-            state: /RollSlice.Destination.State.rollDetail,
-            action: RollSlice.Destination.Action.rollDetail
+            state: /Roll.Destination.State.rollDetail,
+            action: Roll.Destination.Action.rollDetail
         ) { store in
             RollDetailView(store: store)
         }
@@ -52,8 +52,8 @@ struct RollView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             RollView(store: Store(
-                initialState: RollSlice.State(),
-                reducer: RollSlice()
+                initialState: Roll.State(),
+                reducer: Roll()
             ))
         }
     }

@@ -2,7 +2,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct RollDetailView: View {
-    let store: StoreOf<RollDetailSlice>
+    let store: StoreOf<RollDetail>
 
     var body: some View {
         WithViewStore(store, observe: \.dice) { viewStore in
@@ -31,10 +31,10 @@ struct RollDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             RollDetailView(store: Store(
-                initialState: RollDetailSlice.State(
+                initialState: RollDetail.State(
                     dice: .init(name: "Coworking Café", options: ["Pergamino", "Urbania", "Juan Valdez"])
                 ),
-                reducer: RollDetailSlice()
+                reducer: RollDetail()
             ))
         }
     }
