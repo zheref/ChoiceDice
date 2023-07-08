@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton } from '@ionic/react';
 import ExploreContainer from '../../components/ExploreContainer';
 import './styles.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // Store
 import { RollState, deleteDice } from '../../../core/rollSlice';
 import { RootState } from '../../../core/appStore';
-import { trash } from 'ionicons/icons';
+import { trash, add } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 const Roll: React.FC = () => {
   const dices = useSelector((state: RootState) => state.roll.dices);
@@ -28,7 +29,7 @@ const Roll: React.FC = () => {
         <IonList>
           {dices.map(dice => (
             <IonItemSliding key={dice.id}>
-              <IonItem key={dice.id} routerLink={`/roll/${dice.id}`}>
+              <IonItem key={dice.id} routerLink={`/roll/for/${dice.id}`}>
                 <IonLabel>{dice.name}</IonLabel>
               </IonItem>
               <IonItemOptions side="end">
@@ -39,6 +40,13 @@ const Roll: React.FC = () => {
             </IonItemSliding>
           ))}
         </IonList>
+        <IonFab slot="fixed" vertical="bottom" horizontal="end">
+          <Link to="/roll/add">
+            <IonFabButton>
+              <IonIcon icon={add}></IonIcon>
+            </IonFabButton>
+          </Link>
+        </IonFab>
       </IonContent>
     </IonPage>
   );

@@ -34,6 +34,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './ui/theme/variables.css';
 import RollDetail from './ui/pages/RollDetail';
+import AddRoll from './ui/pages/AddRoll';
 
 setupIonicReact();
 
@@ -45,7 +46,10 @@ const App: React.FC = () => (
           <Route exact path="/roll">
             <Roll />
           </Route>
-          <Route path="/roll/:id" component={RollDetail} />
+          <Route exact path="/roll/add">
+            <AddRoll />
+          </Route>
+          <Route path="/roll/for/:id" component={RollDetail} />
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
