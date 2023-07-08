@@ -4,11 +4,13 @@ import Foundation
 struct Roll: ReducerProtocol {
     
     struct State: Equatable {
-        @BindingState var dices: [Dice] = [
-            .init(name: "Sede Bodytech", options: ["Rio Sur", "Viscaya", "Las Americas"]),
-            .init(name: "Color de Ropa", options: ["Negro", "Amarillo", "Rojo", "Azul", "Blanco", "Verde"]),
-            .init(name: "Coworking Café", options: ["Pergamino", "Urbania", "Café Dragon", "Al Alma", "Juan Valdez", "Semilla"])
-        ]
+//        @BindingState var dices: [Dice] = [
+//            .init(name: "Sede Bodytech", options: ["Rio Sur", "Viscaya", "Las Americas"]),
+//            .init(name: "Color de Ropa", options: ["Negro", "Amarillo", "Rojo", "Azul", "Blanco", "Verde"]),
+//            .init(name: "Coworking Café", options: ["Pergamino", "Urbania", "Café Dragon", "Al Alma", "Juan Valdez", "Semilla"])
+//        ]
+
+        @BindingState var dices: [Dice] = []
 
         @PresentationState var destination: Destination.State?
     }
@@ -41,6 +43,9 @@ struct Roll: ReducerProtocol {
         case navigateToDice(dice: Dice)
         case addNewRoll
 
+        // Effect actions
+        case installDices([Dice])
+
         // Automatic actions
         case destination(PresentationAction<Destination.Action>)
         case binding(BindingAction<State>)
@@ -49,6 +54,10 @@ struct Roll: ReducerProtocol {
     enum DelegateAction {
         case addNewDice(dice: Dice)
     }
+
+    let dicesKey = "dices"
+
+    @Dependency(\.keyValueStorage) var keyValueStorage
     
     var body: some ReducerProtocolOf<Self> {
         Reduce { state, action in
@@ -56,8 +65,14 @@ struct Roll: ReducerProtocol {
             case .addNewRoll:
                 state.destination = .addRoll(.init())
                 return .none
-            case .started:
+            case .installDices(let dices):
+                state.dices = dices
                 return .none
+            case .started:
+                return .run { send in
+                    let dices = keyValueStorage.readDices(dicesKey)
+                    await send(.installDices(dices ?? []))
+                }
             case .binding:
                 return .none
             case .navigateToDice(let dice):
@@ -66,7 +81,9 @@ struct Roll: ReducerProtocol {
             case .destination(.presented(.addRoll(.rollAction(.addNewDice(dice: let dice))))):
                 state.dices.append(dice)
                 state.destination = nil
-                return .none
+                return .run { [dices = state.dices] _ in
+                    keyValueStorage.saveDices(dicesKey, dices)
+                }
             case .destination:
                 return .none
             }
