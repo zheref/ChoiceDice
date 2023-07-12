@@ -12,8 +12,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle, diceOutline, addCircleOutline, personCircleOutline } from 'ionicons/icons';
 import Roll from './ui/pages/Roll';
-import Tab2 from './ui/pages/Tab2';
+import CreateRoll from './ui/pages/CreateRoll';
 import Tab3 from './ui/pages/Tab3';
+import Tab2 from './ui/pages/Tab2';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -66,7 +67,7 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={diceOutline} />
             <IonLabel>Roll</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="createRoll" href="/createRoll">
             <IonIcon aria-hidden="true" icon={addCircleOutline} />
             <IonLabel>Create</IonLabel>
           </IonTabButton>

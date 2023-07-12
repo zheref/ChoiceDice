@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonItem, IonPage, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react"
+import { IonButton, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonInput, IonItem, IonList, IonPage, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react"
+import { add, star } from "ionicons/icons";
 
 const AddRoll: React.FC = () => (
     <IonPage>
@@ -6,14 +7,23 @@ const AddRoll: React.FC = () => (
         <IonHeader>
             <IonToolbar>
                 <IonTitle>Add new roll</IonTitle>
-            </IonToolbar>
-           
+            </IonToolbar> 
         </IonHeader>
+  
         <IonContent>
-            <IonItem>
-                <IonTextarea label="Roll" labelPlacement="floating"></IonTextarea>
-            </IonItem>
+            <IonList>
+                <IonText><p>Opciones</p></IonText>
+                <IonItem>
+                    <IonInput label="Name"></IonInput>
+                    <IonButton shape="round" >
+                        <IonIcon slot="icon-only" icon={add}></IonIcon>
+                    </IonButton>
+                </IonItem>
+            </IonList> 
+                
+            
         </IonContent>  
+
     </IonPage>
 )
 
